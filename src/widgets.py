@@ -46,7 +46,7 @@ class Line():
 
 
 class Cell():
-    def __init__(self, start_point, length_x,length_y, window):
+    def __init__(self, start_point, length_x, length_y, window):
         self.__x1, self.__y1 = start_point.x, start_point.y
         self.__x2, self.__y2 = (self.__x1+length_x), (self.__y1+length_y)
         self.has_top_wall = True
