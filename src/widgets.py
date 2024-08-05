@@ -79,6 +79,28 @@ class Cell():
                      Point(self.__x1, self.__y1)),
                 fill_color)
 
+    def erase(self, fill_color):
+        if not self.has_top_wall:
+            self.__w.draw_line(
+                Line(Point(self.__x1, self.__y1),
+                     Point(self.__x2, self.__y1)),
+                fill_color)
+        if not self.has_right_wall:
+            self.__w.draw_line(
+                Line(Point(self.__x2, self.__y1),
+                     Point(self.__x2, self.__y2)),
+                fill_color)
+        if not self.has_bottom_wall:
+            self.__w.draw_line(
+                Line(Point(self.__x2, self.__y2),
+                     Point(self.__x1, self.__y2)),
+                fill_color)
+        if not self.has_left_wall:
+            self.__w.draw_line(
+                Line(Point(self.__x1, self.__y2),
+                     Point(self.__x1, self.__y1)),
+                fill_color)
+
     def draw_move(self, to_cell, undo=False):
         color = "gray" if undo else "red"
         x, y = to_cell.center_x, to_cell.center_y
